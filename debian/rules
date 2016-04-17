@@ -1,0 +1,10 @@
+#!/usr/bin/make -f
+
+%:
+	dh $@ 
+
+override_dh_auto_configure:
+	$(CURDIR)/configure.sh "$(CURDIR)"
+
+override_dh_auto_clean:
+	rm -fr $(CURDIR)/usr
